@@ -1,0 +1,17 @@
+r#!/bin/bash
+
+if [ -e $1 ]
+
+then
+
+gzip $1
+
+mv $1.gz ~/RECYCLE/$1.gz
+
+find ~/RECYCLE/ -mtime +7 -delete
+
+else
+
+echo 'файл не существует'
+
+fi
